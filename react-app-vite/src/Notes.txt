@@ -1,0 +1,44 @@
+************************useEffect vs useLayoutEffect*************************
+🔹 useEffect:
+Runs asynchronously after paint (non-blocking).
+Suitable for:
+1. Data fetching
+2. Subscribing to events
+3. Setting up timers
+4. Logging
+
+useLayoutEffect:
+Runs synchronously before the browser paints the screen (blocking).
+
+Runs after DOM is updated but before the browser paints.
+It is synchronous, blocking the paint until its code runs.
+Useful for reading DOM layout or applying layout-based side effects.
+
+
+Suitable for:
+1. Reading layout from the DOM (like getBoundingClientRect)
+2. Measuring or updating DOM styles
+
+
+-->useLayoutEffect is powerful when you need to interact with the DOM 
+   before the browser paints, especially to avoid flickering, layout shifts, 
+   or timing issues. Here are some common use cases:
+
+   If you need to read layout information like offsetHeight, 
+   scrollHeight, getBoundingClientRect():
+
+   useLayoutEffect(() => {
+   const height = elementRef.current?.getBoundingClientRect().height;
+   console.log("Height before paint:", height);
+   }, []);
+
+   *************************What is unit testing*********************************
+
+-->Unit testing in React refers to testing individual components or functions in 
+   isolation to ensure they work as expected.
+
+   It is used for checking if a component:
+    1. Renders correct output for given props.
+    2. Handles user events (e.g., clicks, typing).
+    3. Updates state correctly.
+    4. Makes expected API calls (mocked).

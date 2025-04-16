@@ -27,6 +27,12 @@
 // Config: Vite requires minimal configuration, whereas Webpack/CRA is often complex.
 // Build Tool: Vite uses Rollup for production builds, while Webpack/CRA uses Webpack.
 
+//Babel is a JavaScript compiler that is commonly used in React projects to
+//convert modern JavaScript (ES6+ and JSX) into a version that is compatible
+//with older browsers (like ES5).
+
+//The bundler (like Vite/Webpack) is responsible for creating the build, 
+//and it uses tools like Babel and possibly TypeScript during the process.
 import { useState } from "react";
 
 function App() {
